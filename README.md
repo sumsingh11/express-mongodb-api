@@ -15,8 +15,8 @@ A Node.js application using Express and MongoDB for managing users and products.
 2. Install dependencies: `npm install`
 3. Create a `.env` file in the root directory with your MongoDB connection string:
    ```
-   PORT=3000
-   MONGODB_URI=mongodb+srv://your_username:your_password@your_cluster.mongodb.net/express_api_db?retryWrites=true&w=majority
+   PORT=
+   MONGODB_URI=
    ```
 4. Start the application: `npm run dev`
 
