@@ -1,0 +1,30 @@
+extends ../layouts/main
+
+block content
+  .products-admin
+    h2 Products Management
+    
+    a.btn.add-btn(href="/admin/products/add") Add New Product
+    
+    if products && products.length > 0
+      table.data-table
+        thead
+          tr
+            th Name
+            th Description
+            th Price
+            th Category
+            th In Stock
+            th Actions
+        tbody
+          each product in products
+            tr
+              td= product.name
+              td= product.description
+              td= `$${product.price.toFixed(2)}`
+              td= product.category
+              td= product.inStock ? 'Yes' : 'No'
+              td
+                a.btn.delete-btn(href=`/admin/products/delete/${product._id}`, onclick="return confirm('Are you sure?')") Delete
+    else
+      p.no-data No products found.

@@ -1,0 +1,28 @@
+extends ../layouts/main
+
+block content
+  .users-admin
+    h2 Users Management
+    
+    a.btn.add-btn(href="/admin/users/add") Add New User
+    
+    if users && users.length > 0
+      table.data-table
+        thead
+          tr
+            th Name
+            th Email
+            th Role
+            th Created
+            th Actions
+        tbody
+          each user in users
+            tr
+              td= user.name
+              td= user.email
+              td= user.role
+              td= user.createdAt.toLocaleDateString()
+              td
+                a.btn.delete-btn(href=`/admin/users/delete/${user._id}`, onclick="return confirm('Are you sure?')") Delete
+    else
+      p.no-data No users found.

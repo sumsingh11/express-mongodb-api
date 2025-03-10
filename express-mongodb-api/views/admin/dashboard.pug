@@ -1,0 +1,16 @@
+extends ../layouts/main
+
+block content
+  .dashboard
+    h2 Admin Dashboard
+    
+    .admin-links
+      .admin-card
+        h3 Users Management
+        p Manage user accounts
+        a.btn(href="/admin/users") Manage Users
+      
+      .admin-card
+        h3 Products Management
+        p Manage product inventory
+        a.btn(href="/admin/products") Manage Products

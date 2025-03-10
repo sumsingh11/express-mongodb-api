@@ -1,0 +1,32 @@
+extends ../layouts/main
+
+block content
+  .add-product
+    h2 Add New Product
+    
+    form.form(action="/admin/products/add", method="POST")
+      .form-group
+        label(for="name") Name:
+        input#name(type="text", name="name", required)
+      
+      .form-group
+        label(for="description") Description:
+        textarea#description(name="description", required)
+      
+      .form-group
+        label(for="price") Price:
+        input#price(type="number", name="price", step="0.01", required)
+      
+      .form-group
+        label(for="category") Category:
+        input#category(type="text", name="category", required)
+      
+      .form-group
+        label(for="inStock") In Stock:
+        select#inStock(name="inStock")
+          option(value="true") Yes
+          option(value="false") No
+      
+      .form-group
+        button.btn(type="submit") Add Product
+        a.btn.cancel-btn(href="/admin/products") Cancel

@@ -1,0 +1,24 @@
+extends ../layouts/main
+
+block content
+  .add-user
+    h2 Add New User
+    
+    form.form(action="/admin/users/add", method="POST")
+      .form-group
+        label(for="name") Name:
+        input#name(type="text", name="name", required)
+      
+      .form-group
+        label(for="email") Email:
+        input#email(type="email", name="email", required)
+      
+      .form-group
+        label(for="role") Role:
+        select#role(name="role")
+          option(value="user") User
+          option(value="admin") Admin
+      
+      .form-group
+        button.btn(type="submit") Add User
+        a.btn.cancel-btn(href="/admin/users") Cancel

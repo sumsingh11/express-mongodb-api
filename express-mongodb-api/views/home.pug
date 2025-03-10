@@ -1,0 +1,20 @@
+extends layouts/main
+
+block content
+  .home
+    h2 Welcome to Express MongoDB API
+    
+    .api-info
+      h3 Available API Endpoints:
+      ul
+        li
+          a(href="/api/users") /api/users
+          span  - Get all users
+        li
+          a(href="/api/products") /api/products
+          span  - Get all products
+      
+    .admin-link
+      h3 Admin Section
+      p 
+        a.btn(href="/admin") Go to Admin Dashboard
